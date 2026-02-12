@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body,
 main {
@@ -5,4 +9,20 @@ main {
   height: 100%;
   overflow: hidden;
   margin: 0;
+}
+
+/* Spline canvas fills container */
+main canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
 }
