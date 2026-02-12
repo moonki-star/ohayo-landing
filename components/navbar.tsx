@@ -6,7 +6,7 @@ import { Globe, Settings } from "lucide-react";
 
 export function Navbar() {
   return (
-    <nav className="flex w-full items-center justify-between px-6 py-4">
+    <nav className="flex w-full items-center justify-between border-b border-white/15 bg-white/5 px-6 py-2.5 backdrop-blur-sm">
       {/* Left: Logo */}
       <div className="pointer-events-auto">
         <OhayoLogo />
