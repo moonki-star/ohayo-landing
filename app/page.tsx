@@ -8,7 +8,7 @@ export default function Home() {
     <main className="relative h-screen w-screen overflow-hidden">
       {/* Layer 0: Spline 3D Background */}
       <div className="absolute inset-0 z-0">
-        <Spline scene="https://prod.spline.design/EpEsOG9cJB3780xK/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/VRBqgzWLXLAaTks0/scene.splinecode" />
       </div>
 
       {/* Layer 1: UI Overlay */}
