@@ -10,12 +10,23 @@ export function HeroCard() {
         className="relative overflow-hidden border-none px-12 py-14"
         style={{
           borderRadius: '2rem',
-          background: 'rgba(0, 0, 0, 0.00)',
+          background: 'rgba(255, 255, 255, 0.33)',
           boxShadow: '0 8px 8px 0 rgba(0, 0, 0, 0.15)',
+          backdropFilter: 'blur(15px) saturate(1.41)',
+          WebkitBackdropFilter: 'blur(15px) saturate(1.41)',
         }}
       >
+        {/* Figma Glass: light -45deg 80% */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            borderRadius: '2rem',
+            background: 'linear-gradient(-45deg, transparent 10%, rgba(255,255,255,0.80) 50%, transparent 90%)',
+            mixBlendMode: 'overlay',
+          }}
+        />
 
-        {/* Content (above light layer) */}
+        {/* Content (above glass layer) */}
         <div className="relative z-10">
           {/* Title */}
           <h1 className="mb-4 text-center text-4xl font-bold leading-tight text-gray-900 md:text-5xl">
