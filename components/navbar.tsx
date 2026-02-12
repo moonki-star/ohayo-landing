@@ -27,7 +27,7 @@ export function Navbar() {
       <div className="flex items-center gap-2">
         {/* Connect Button */}
         <button
-          className="flex shrink-0 items-center justify-center whitespace-nowrap"
+          className="flex shrink-0 items-center justify-center whitespace-nowrap transition-opacity hover:opacity-80 active:opacity-70"
           style={{
             height: "2.0625rem",
             padding: "0 1rem",
@@ -44,13 +44,12 @@ export function Navbar() {
 
         {/* Globe Icon Button */}
         <button
-          className="flex shrink-0 items-center justify-center"
+          className="flex shrink-0 items-center justify-center transition-colors hover:bg-gray-100 active:bg-gray-200"
           style={{
             width: "2rem",
             height: "2rem",
             padding: "0.25rem",
             borderRadius: "0.375rem",
-            background: "#fdfdfd",
             border: "1px solid #e5e5e5",
           }}
         >
@@ -59,13 +58,12 @@ export function Navbar() {
 
         {/* Settings Icon Button */}
         <button
-          className="flex shrink-0 items-center justify-center"
+          className="flex shrink-0 items-center justify-center transition-colors hover:bg-gray-100 active:bg-gray-200"
           style={{
             width: "2rem",
             height: "2rem",
             padding: "0.25rem",
             borderRadius: "0.375rem",
-            background: "#fdfdfd",
             border: "1px solid #e5e5e5",
           }}
         >
@@ -85,7 +83,9 @@ function NavLink({
 }) {
   return (
     <button
-      className="flex shrink-0 flex-col items-start justify-center"
+      className={`flex shrink-0 flex-col items-start justify-center transition-opacity hover:opacity-70 active:opacity-50 ${
+        active ? "cursor-default hover:opacity-100" : ""
+      }`}
       style={{
         height: "2rem",
         padding: "0.5rem 0.625rem",
