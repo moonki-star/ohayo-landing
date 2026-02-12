@@ -1,34 +1,75 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { OhayoLogo } from "@/components/ohayo-logo";
 import { Globe, Settings } from "lucide-react";
 
 export function Navbar() {
   return (
-    <nav className="flex w-full items-center justify-between border-b border-white/15 bg-white/5 px-6 py-2.5 backdrop-blur-sm">
-      {/* Left: Logo */}
-      <div className="pointer-events-auto">
+    <nav
+      className="pointer-events-auto flex w-full items-center justify-between"
+      style={{
+        padding: "0.625rem 1.125rem",
+        borderBottom: "1px solid #dedede",
+        background: "#ffffff",
+      }}
+    >
+      {/* Left: Button_Container (logo + nav links) */}
+      <div className="flex items-center" style={{ gap: "1.125rem" }}>
         <OhayoLogo />
-      </div>
 
-      {/* Center: Navigation Links */}
-      <div className="pointer-events-auto flex items-center gap-8">
+        {/* Navigation Links */}
         <NavLink active>Trade</NavLink>
         <NavLink>Portfolio</NavLink>
         <NavLink>Me</NavLink>
       </div>
 
-      {/* Right: Actions */}
-      <div className="pointer-events-auto flex items-center gap-2">
-        <Button className="rounded-full bg-ohayo-coral px-6 text-white hover:bg-ohayo-coral-dark">
+      {/* Right: Container (Connect + icons) */}
+      <div className="flex items-center gap-2">
+        {/* Connect Button */}
+        <button
+          className="flex shrink-0 items-center justify-center whitespace-nowrap"
+          style={{
+            height: "2.0625rem",
+            padding: "0 1rem",
+            borderRadius: "0.375rem",
+            background: "#ff6868",
+            color: "#ffffff",
+            fontSize: "0.75rem",
+            fontWeight: 400,
+            lineHeight: "1.9375rem",
+          }}
+        >
           Connect
-        </Button>
-        <button className="rounded-full p-2 text-gray-500 transition-colors hover:bg-black/5 hover:text-gray-800">
-          <Globe className="h-5 w-5" />
         </button>
-        <button className="rounded-full p-2 text-gray-500 transition-colors hover:bg-black/5 hover:text-gray-800">
-          <Settings className="h-5 w-5" />
+
+        {/* Globe Icon Button */}
+        <button
+          className="flex shrink-0 items-center justify-center"
+          style={{
+            width: "2rem",
+            height: "2rem",
+            padding: "0.25rem",
+            borderRadius: "0.375rem",
+            background: "#fdfdfd",
+            border: "1px solid #e5e5e5",
+          }}
+        >
+          <Globe className="h-4 w-4" style={{ color: "#121212" }} />
+        </button>
+
+        {/* Settings Icon Button */}
+        <button
+          className="flex shrink-0 items-center justify-center"
+          style={{
+            width: "2rem",
+            height: "2rem",
+            padding: "0.25rem",
+            borderRadius: "0.375rem",
+            background: "#fdfdfd",
+            border: "1px solid #e5e5e5",
+          }}
+        >
+          <Settings className="h-4 w-4" style={{ color: "#121212" }} />
         </button>
       </div>
     </nav>
@@ -44,9 +85,16 @@ function NavLink({
 }) {
   return (
     <button
-      className={`text-sm font-medium transition-colors ${
-        active ? "text-gray-900" : "text-gray-500 hover:text-gray-800"
-      }`}
+      className="flex shrink-0 flex-col items-start justify-center"
+      style={{
+        height: "2rem",
+        padding: "0.5rem 0.625rem",
+        fontSize: "0.75rem",
+        fontWeight: 400,
+        lineHeight: "1rem",
+        color: active ? "#ff6868" : "#121212",
+        whiteSpace: "nowrap",
+      }}
     >
       {children}
     </button>
