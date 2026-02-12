@@ -1,6 +1,7 @@
 "use client";
 
 import { OhayoLogo } from "@/components/ohayo-logo";
+import { OhayoLogoSymbol } from "@/components/ohayo-logo-symbol";
 import { Globe, Settings } from "lucide-react";
 
 export function Navbar() {
@@ -8,29 +9,35 @@ export function Navbar() {
     <nav
       className="pointer-events-auto flex w-full items-center justify-between"
       style={{
-        padding: "0.625rem 1.125rem",
+        padding: "0.625rem",
         borderBottom: "1px solid #dedede",
         background: "#ffffff",
       }}
     >
-      {/* Left: Button_Container (logo + nav links) */}
-      <div className="flex items-center" style={{ gap: "1.125rem" }}>
-        <OhayoLogo />
+      {/* Left: Button_Container */}
+      <div className="flex items-center" style={{ gap: "0.625rem" }}>
+        {/* Mobile: logo symbol only */}
+        <div className="md:hidden">
+          <OhayoLogoSymbol />
+        </div>
 
-        {/* Navigation Links */}
-        <NavLink active>Trade</NavLink>
-        <NavLink>Portfolio</NavLink>
-        <NavLink>Me</NavLink>
+        {/* Desktop: full logo + nav links */}
+        <div className="hidden md:flex md:items-center" style={{ gap: "1.125rem" }}>
+          <OhayoLogo />
+          <NavLink active>Trade</NavLink>
+          <NavLink>Portfolio</NavLink>
+          <NavLink>Me</NavLink>
+        </div>
       </div>
 
-      {/* Right: Container (Connect + icons) */}
+      {/* Right: Container */}
       <div className="flex items-center gap-2">
         {/* Connect Button */}
         <button
           className="flex shrink-0 items-center justify-center whitespace-nowrap transition-opacity hover:opacity-80 active:opacity-70"
           style={{
             height: "2.0625rem",
-            padding: "0 1rem",
+            padding: "0.0625rem 1.0625rem",
             borderRadius: "0.375rem",
             background: "#ff6868",
             color: "#ffffff",
@@ -42,9 +49,9 @@ export function Navbar() {
           Connect
         </button>
 
-        {/* Globe Icon Button */}
+        {/* Desktop only: Globe + Settings */}
         <button
-          className="flex shrink-0 items-center justify-center transition-colors hover:bg-gray-100 active:bg-gray-200"
+          className="hidden shrink-0 items-center justify-center transition-colors hover:bg-gray-100 active:bg-gray-200 md:flex"
           style={{
             width: "2rem",
             height: "2rem",
@@ -56,9 +63,8 @@ export function Navbar() {
           <Globe className="h-4 w-4" style={{ color: "#121212" }} />
         </button>
 
-        {/* Settings Icon Button */}
         <button
-          className="flex shrink-0 items-center justify-center transition-colors hover:bg-gray-100 active:bg-gray-200"
+          className="hidden shrink-0 items-center justify-center transition-colors hover:bg-gray-100 active:bg-gray-200 md:flex"
           style={{
             width: "2rem",
             height: "2rem",

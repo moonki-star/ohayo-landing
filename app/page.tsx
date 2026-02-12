@@ -1,6 +1,7 @@
 import Spline from "@splinetool/react-spline/next";
 import { Navbar } from "@/components/navbar";
 import { HeroCard } from "@/components/hero-card";
+import { GNB } from "@/components/gnb";
 
 export default function Home() {
   return (
@@ -13,13 +14,17 @@ export default function Home() {
       {/* Layer 1: UI Overlay */}
       <div className="pointer-events-none relative z-10 flex h-full w-full flex-col">
         <Navbar />
-        {/* cotentswrapper: Figma flex column, align-items center */}
+
+        {/* cotentswrapper: flex column, align-items center */}
         <div className="flex flex-1 flex-col items-center">
-          {/* contents: Figma max-width 63.75rem, padding 1.5rem, flex column, justify-content center, align-items center, gap 1.5rem */}
-          <div className="flex w-full max-w-[63.75rem] flex-1 flex-col items-center justify-center gap-6 p-6">
+          {/* contents: Mobile px-5 centered | Desktop max-width 63.75rem */}
+          <div className="flex w-full max-w-[22.0625rem] flex-1 flex-col items-center justify-center px-0 md:max-w-[63.75rem] md:p-6">
             <HeroCard />
           </div>
         </div>
+
+        {/* Bottom Navigation - mobile only */}
+        <GNB />
       </div>
     </main>
   );

@@ -1,12 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export function HeroCard() {
   return (
     <div
-      className="relative overflow-hidden"
+      className="relative w-full overflow-hidden"
       style={{
         borderRadius: '2rem',
         background: 'rgba(255, 255, 255, 0.33)',
@@ -27,23 +26,31 @@ export function HeroCard() {
       />
 
       {/* Content (above glass layer) */}
-      <div className="relative z-10 flex flex-col items-center gap-6 px-6 py-6">
+      {/* Mobile: py-14 px-2 gap-6 | Desktop: py-6 px-6 gap-6 */}
+      <div className="relative z-10 flex flex-col items-center gap-6 px-2 py-14 md:px-6 md:py-6">
         {/* Text group */}
-        <div className="flex flex-col items-center gap-4">
-          {/* Title */}
+        <div className="flex flex-col items-center gap-2 md:gap-4">
+          {/* Title: Mobile 36px/40px | Desktop 3rem/normal */}
           <h1
-            className="text-center font-extrabold leading-normal"
-            style={{ fontSize: '3rem', color: '#121212' }}
+            className="text-center font-extrabold"
+            style={{ color: '#121212' }}
           >
-            Trade Real-World Assets,
-            <br />
-            On-Chain
+            <span className="block md:hidden" style={{ fontSize: '2.25rem', lineHeight: '2.5rem' }}>
+              Trade Real-World Assets,
+              <br />
+              On-Chain
+            </span>
+            <span className="hidden md:block" style={{ fontSize: '3rem', lineHeight: 'normal' }}>
+              Trade Real-World Assets,
+              <br />
+              On-Chain
+            </span>
           </h1>
 
-          {/* Description */}
+          {/* Description: Mobile 14px/20px | Desktop 14px/normal */}
           <p
-            className="max-w-md text-center text-sm leading-normal"
-            style={{ color: '#121212' }}
+            className="max-w-md text-center text-sm"
+            style={{ color: '#121212', lineHeight: '1.25rem' }}
           >
             Enter a referral code to earn a share of trading fees. Or become an
             affiliate, grow your network, and earn even more commission.
@@ -52,14 +59,25 @@ export function HeroCard() {
 
         {/* CTA Button */}
         <div className="pointer-events-auto">
-          <Button
-            variant="outline"
-            size="lg"
-            className="group rounded-full border-gray-200 bg-white/30 px-8 text-sm font-medium text-ohayo-coral backdrop-blur-sm transition-all hover:bg-white/50"
+          {/* Mobile: outline rectangle | Desktop: outline rounded-full */}
+          <button
+            className="group flex items-center justify-center gap-2 transition-opacity hover:opacity-80 active:opacity-70"
+            style={{
+              height: '3rem',
+              padding: '0.5rem 2rem',
+              background: '#fdfdfd',
+              border: '1px solid #e5e5e5',
+              borderRadius: '0.375rem',
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              lineHeight: '1.25rem',
+              color: '#ff6868',
+              whiteSpace: 'nowrap',
+            }}
           >
             View Trade
-            <ArrowRight className="ml-2 h-4 w-4 text-ohayo-coral transition-transform group-hover:translate-x-1" />
-          </Button>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" style={{ color: '#ff6868' }} />
+          </button>
         </div>
       </div>
     </div>
