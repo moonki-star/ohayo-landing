@@ -7,21 +7,13 @@ export function HeroCard() {
   return (
     <div className="w-full max-w-2xl px-6">
       <div
-        className="relative overflow-hidden rounded-3xl border border-white/25 px-12 py-14 shadow-2xl"
+        className="relative overflow-hidden border-none px-12 py-14"
         style={{
-          background: 'rgba(255, 255, 255, 0.33)',
-          backdropFilter: 'blur(15px) saturate(1.41)',
-          WebkitBackdropFilter: 'blur(15px) saturate(1.41)',
+          borderRadius: '2rem',
+          background: 'rgba(0, 0, 0, 0.00)',
+          boxShadow: '0 8px 8px 0 rgba(0, 0, 0, 0.15)',
         }}
       >
-        {/* Light reflection: -45deg, 80% */}
-        <div
-          className="pointer-events-none absolute inset-0 rounded-3xl"
-          style={{
-            background: 'linear-gradient(-45deg, transparent 20%, rgba(255,255,255,0.8) 50%, transparent 80%)',
-            mixBlendMode: 'soft-light',
-          }}
-        />
 
         {/* Content (above light layer) */}
         <div className="relative z-10">
