@@ -22,7 +22,6 @@ export default function Home() {
         <div className="pointer-events-none relative z-10 flex h-full w-full flex-col">
           <Navbar />
           <HeroSection />
-          <GNB />
         </div>
       </section>
 
@@ -32,6 +31,9 @@ export default function Home() {
       <PriceEfficiencySection />
       <BorderlessTradingSection />
       <CTASection />
+
+      {/* Mobile GNB - sticky bottom */}
+      <GNB />
     </main>
   );
 }

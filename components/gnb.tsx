@@ -6,8 +6,11 @@ import type { LucideIcon } from "lucide-react";
 export function GNB() {
   return (
     <nav
-      className="pointer-events-auto flex w-full flex-col items-center md:hidden"
+      className="flex w-full flex-col items-center md:hidden"
       style={{
+        position: "sticky",
+        bottom: 0,
+        zIndex: 50,
         padding: "0.75rem 0",
         background: "#ffffff",
         borderTop: "1px solid #dedede",

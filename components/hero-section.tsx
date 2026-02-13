@@ -7,9 +7,9 @@ export function HeroSection() {
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-      <div className="flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] md:items-start">
+      <div className="flex w-full max-w-[63.75rem] flex-col items-start px-[1.5rem]">
         <h1
-          className="text-center font-extrabold md:text-left"
+          className="text-left font-extrabold"
           style={{
             fontSize: "2.25rem",
             lineHeight: "2.5rem",
@@ -20,7 +20,7 @@ export function HeroSection() {
           <span className="md:hidden">
             Liberate your
             <br />
-            <span style={{ color: "#FF6868" }}>Financial border</span>
+            <span style={{ color: "#450A0A" }}>Financial border</span>
           </span>
           <span
             className="hidden md:block"
@@ -33,7 +33,7 @@ export function HeroSection() {
         </h1>
 
         <p
-          className="mt-[1.5rem] max-w-[31.5rem] text-center text-[0.875rem] leading-[1.25rem] md:text-left"
+          className="mt-[1.5rem] max-w-[31.5rem] text-left text-[0.875rem] leading-[1.25rem]"
           style={{
             color: "#52525B",
             animation: "fadeInUp 0.8s ease 0.3s both",
