@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export function BorderlessTradingSection() {
   return (
     <section style={{ background: "#F8F8F8" }}>
@@ -39,7 +41,7 @@ export function BorderlessTradingSection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex cursor-default flex-col gap-[1rem] rounded-[1.125rem] border p-[1.8125rem] pb-[2.3125rem] pt-[2.3125rem]"
+              className="flex cursor-default flex-col items-center gap-[1rem] rounded-[1.125rem] border p-[1.8125rem] pb-[2.3125rem] pt-[2.3125rem] text-center"
               style={{
                 background: "#FFFFFF",
                 borderColor: "#EEEEEE",
@@ -55,13 +57,18 @@ export function BorderlessTradingSection() {
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              {/* Icon */}
-              <div
-                className="flex h-[3rem] w-[3rem] items-center justify-center rounded-[0.875rem]"
-                style={{ background: feature.iconBg }}
-              >
-                <span className="text-[1.5rem]">{feature.emoji}</span>
-              </div>
+              {/* Image */}
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={800}
+                height={437}
+                className="mb-[0.5rem] w-[65%] object-contain"
+                style={{
+                  maskImage: "radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)",
+                  WebkitMaskImage: "radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)",
+                }}
+              />
 
               <span
                 className="text-[1.125rem] font-semibold leading-[1.75rem]"
@@ -85,24 +92,21 @@ export function BorderlessTradingSection() {
 
 const features = [
   {
-    emoji: "🌍",
+    image: "/images/feature-no-borders.jpg",
     title: "No Borders",
     description:
       "Trade from anywhere in the world. No KYC gatekeeping, no geo-restrictions. One global marketplace for everyone.",
-    iconBg: "rgba(16, 163, 127, 0.08)",
   },
   {
-    emoji: "🔐",
+    image: "/images/feature-your-assets.jpg",
     title: "Your Assets, 100% Yours",
     description:
       "Non-custodial trading means your funds never leave your wallet. No counterparty risk, no money printing, no frozen accounts.",
-    iconBg: "rgba(99, 91, 255, 0.08)",
   },
   {
-    emoji: "⏰",
+    image: "/images/feature-247-markets.jpg",
     title: "24/7 Markets",
     description:
       "Markets don't sleep and neither does OHAYO. Trade any time — weekdays, weekends, holidays. Always on, always live.",
-    iconBg: "rgba(255, 107, 74, 0.08)",
   },
 ];

@@ -54,14 +54,17 @@ export function PriceEfficiencySection() {
               className="flex flex-col items-center gap-[0.625rem] rounded-[0.875rem] border p-[1.5rem] text-center"
               style={{ background: "#FFFFFF" }}
             >
-              <div className="relative mb-[0.5rem] aspect-square w-[34.5%]">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  className="rounded-[0.5rem] object-cover"
-                />
-              </div>
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={800}
+                height={437}
+                className="mb-[0.5rem] w-[65%] object-contain"
+                style={{
+                  maskImage: "radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)",
+                  WebkitMaskImage: "radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)",
+                }}
+              />
               <span
                 className="text-[0.875rem] font-semibold"
                 style={{ color: "#121212" }}
