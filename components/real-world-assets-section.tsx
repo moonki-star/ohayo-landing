@@ -45,7 +45,7 @@ export function RealWorldAssetsSection() {
           to { opacity: 0; transform: translateY(-0.5rem); }
         }
       `}</style>
-      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col px-[1.5rem] py-[3.5rem]">
+      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col px-[1.5rem] py-[5rem] md:py-[8rem]">
         {/* Desktop: 2-column layout / Mobile: vertical stack */}
         <div className="flex w-full flex-col items-center gap-[4rem] md:flex-row md:items-center md:justify-between">
           {/* Left: Title Section */}

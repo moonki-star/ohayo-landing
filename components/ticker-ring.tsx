@@ -16,17 +16,16 @@ const TICKERS = [
   { name: "Intel", src: "/logos/intel.svg", color: "#0071C5" },
 ];
 
-/* Pre-compute positions at module level with fixed precision to avoid hydration mismatch */
-const CARD_SIZE = 69.12; /* 4.32rem (4.8rem * 0.9, 10% smaller) */
-const HALF_CARD = CARD_SIZE / 2; /* 38.4px */
+const LOGO_SIZE = 62;
+const HALF_LOGO = LOGO_SIZE / 2;
 const POSITIONS = TICKERS.map((_, i) => {
   const angle = (i / TICKERS.length) * 360;
   const rad = (angle * Math.PI) / 180;
   const r = 140;
   const cx = 170;
   const cy = 170;
-  const xPx = cx + r * Math.cos(rad) - HALF_CARD;
-  const yPx = cy + r * Math.sin(rad) - HALF_CARD;
+  const xPx = cx + r * Math.cos(rad) - HALF_LOGO;
+  const yPx = cy + r * Math.sin(rad) - HALF_LOGO;
   return {
     left: `${Math.round(xPx * 100) / 100}px`,
     top: `${Math.round(yPx * 100) / 100}px`,
@@ -61,16 +60,12 @@ export function TickerRing() {
         {TICKERS.map((t, i) => (
           <div
             key={t.name}
-            className="absolute flex items-center justify-center overflow-hidden"
+            className="absolute flex items-center justify-center"
             style={{
               left: POSITIONS[i].left,
               top: POSITIONS[i].top,
-              width: "4.32rem",
-              height: "4.32rem",
-              borderRadius: "1rem",
-              background: "white",
-              boxShadow: "0 0.125rem 1rem rgba(0,0,0,0.08)",
-              border: "1px solid #f0f0f5",
+              width: `${LOGO_SIZE}px`,
+              height: `${LOGO_SIZE}px`,
               animation: mounted
                 ? "spinRing 30s linear infinite reverse"
                 : "none",
@@ -80,11 +75,11 @@ export function TickerRing() {
               src={t.src}
               alt={t.name}
               width={62}
-              height={43}
+              height={62}
               style={{
                 objectFit: "contain",
-                maxWidth: t.name === "SpaceX" ? "2.8rem" : "3.9rem",
-                maxHeight: t.name === "SpaceX" ? "1.8rem" : "2.7rem",
+                width: "100%",
+                height: "100%",
               }}
             />
           </div>

@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { CostChart } from "@/components/cost-chart";
 
 export function PriceEfficiencySection() {
   return (
     <section style={{ background: "#FFFFFF" }}>
-      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] py-[3.5rem]">
+      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] py-[5rem] md:py-[8rem]">
         {/* Title */}
         <div className="flex w-full flex-col items-center gap-[1.5rem] py-[2.75rem]">
           <span
@@ -50,10 +51,17 @@ export function PriceEfficiencySection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col gap-[0.625rem] rounded-[0.875rem] p-[1.5rem] text-center"
-              style={{ background: "#F8F8F8" }}
+              className="flex flex-col items-center gap-[0.625rem] rounded-[0.875rem] border p-[1.5rem] text-center"
+              style={{ background: "#FFFFFF" }}
             >
-              <span className="text-[1.5rem]">{feature.emoji}</span>
+              <div className="relative mb-[0.5rem] aspect-square w-[34.5%]">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  className="rounded-[0.5rem] object-cover"
+                />
+              </div>
               <span
                 className="text-[0.875rem] font-semibold"
                 style={{ color: "#121212" }}
@@ -76,18 +84,18 @@ export function PriceEfficiencySection() {
 
 const features = [
   {
-    emoji: "📉",
+    image: "/images/feature-01.jpg",
     title: "No Volatility Decay",
     description:
       "ETFs rebalance daily, eroding returns in volatile markets",
   },
   {
-    emoji: "💸",
+    image: "/images/feature-02.jpg",
     title: "0% Management Fee",
     description: "No annual expense ratio eating into your position",
   },
   {
-    emoji: "🎯",
+    image: "/images/feature-03.jpg",
     title: "Precise Leverage",
     description:
       "Get exactly the leverage you want, not a fixed 2x or 3x",

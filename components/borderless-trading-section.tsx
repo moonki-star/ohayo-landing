@@ -3,7 +3,7 @@
 export function BorderlessTradingSection() {
   return (
     <section style={{ background: "#F8F8F8" }}>
-      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] py-[3.5rem]">
+      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] py-[5rem] md:py-[8rem]">
         {/* Title */}
         <div className="flex w-full flex-col items-center gap-[1.5rem] py-[2.75rem]">
           <span

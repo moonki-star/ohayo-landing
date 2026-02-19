@@ -3,11 +3,11 @@
 import { useInView } from "@/lib/use-in-view";
 
 export function CapitalEfficiencySection() {
-  const [ref, inView] = useInView(0.3);
+  const [ref, inView] = useInView(0.5, "-10% 0px -10% 0px");
 
   return (
     <section style={{ background: "#F8F8F8" }}>
-      <div className="mx-auto flex w-full max-w-[63.75rem] px-[1.5rem] py-[3.5rem]">
+      <div className="mx-auto flex w-full max-w-[63.75rem] px-[1.5rem] py-[5rem] md:py-[8rem]">
         {/* Desktop: 2-column horizontal layout / Mobile: vertical stack */}
         <div className="flex w-full flex-col gap-[1.5rem] md:flex-row md:items-center md:justify-between">
           {/* Left: Title + Description + TSLA Box */}

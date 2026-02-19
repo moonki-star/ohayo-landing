@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 
-export function useInView(threshold = 0.15) {
+export function useInView(threshold = 0.15, rootMargin = "0px") {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -11,11 +11,11 @@ export function useInView(threshold = 0.15) {
       ([e]) => {
         if (e.isIntersecting) setInView(true);
       },
-      { threshold }
+      { threshold, rootMargin }
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, [threshold]);
+  }, [threshold, rootMargin]);
 
   return [ref, inView] as const;
 }

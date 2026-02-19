@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export function CTASection() {
   return (
     <section style={{ background: "#171717" }}>
-      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] py-[6rem]">
+      <div className="mx-auto flex w-full max-w-[63.75rem] flex-col items-center px-[1.5rem] py-[6rem] md:py-[10rem]">
         {/* Title */}
         <div className="flex flex-col items-center gap-[1.5rem] py-[2.75rem]">
           <h2
